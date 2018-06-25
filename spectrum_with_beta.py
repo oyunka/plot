@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import pandas as pd
 import numpy as np
-from matplotlib import pyplot as plt 
-import matplotlib.cm as cm 
+from matplotlib import pyplot as plt
+import matplotlib.cm as cm
 from matplotlib.colors import LogNorm
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.colors import LinearSegmentedColormap
@@ -58,7 +58,7 @@ def Legendre1():
 def Legendre2():
     first = np.zeros((num_kang), dtype = 'float')
     for m in range(0, num_kang):
-        first[m] = 0.5 * (3*(cos_ang[m])**2 - 1)   
+        first[m] = 0.5 * (3*(cos_ang[m])**2 - 1)
     return  first
 
 def Legendre3():
@@ -95,7 +95,7 @@ momentum = krad[:,0]
 
 for i in range(0,num_krad):
     if(i < num_krad):
-        dk[i] = momentum[i] - momentum[i-1]   
+        dk[i] = momentum[i] - momentum[i-1]
     if(i == 0) :
         dk[i] = momentum[i] - 0.0
 I2 = np.zeros((num_kang), dtype='float')
@@ -108,7 +108,7 @@ for i in range(0, num_krad_half):
 
 # for i in range(0, num_krad_half):
 #     for j in range(0, num_kang):
-#         =  weighted_kval[i, j] *dk[i]* momentum[i] **2 
+#         =  weighted_kval[i, j] *dk[i]* momentum[i] **2
 #         print(dk[i]* momentum[i] **2 )
 
 # print(I1,'\n',I2)
