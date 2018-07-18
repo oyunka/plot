@@ -1,0 +1,37 @@
+im
+norb = 5  軌道数、主量子数
+val[iorb, l, irad] 元となる計算データ。サイズは(5, 4,　400 ) mは(+-lまで)　lは(n-1まで)
+mnum = 3   s,p,d,f　軌道磁気量子数
+realp cvalの実部を含む(krad, orb)
+imagp cvalの虚部を含む
+phase (mnum, lmax+1, num_krad) lは0,1,2,3(軌道量子数、方位量子数、運動量方向の分割)
+phase = np.arctan2(np.imag(val_msum), np.real(val_msum))    shape は(3, 4, 400)
+val_msum = np.zeros((mnum, lmax+1, num_krad)
+m_list = [0, 0, -1, 0, 1]     1s 2s 2p 2p 2p軌道
+m_list2 = [-1, 0, 1]
+
+v2 = val_msum / val_msum[2, 2, :]　(m = -1, l = 2, d, krad = 400 )
+
+
+
+# number of orbital :  5
+# im, m, iorb :  0 ,  -1 ,  2
+# im, m, iorb :  0 ,  -1 ,  2
+# im, m, iorb :  0 ,  -1 ,  2
+# im, m, iorb :  0 ,  -1 ,  2
+# im, m, iorb :  1 ,  0 ,  0
+# im, m, iorb :  1 ,  0 ,  0
+# im, m, iorb :  1 ,  0 ,  0
+# im, m, iorb :  1 ,  0 ,  0
+# im, m, iorb :  1 ,  0 ,  1
+# im, m, iorb :  1 ,  0 ,  1
+# im, m, iorb :  1 ,  0 ,  1
+# im, m, iorb :  1 ,  0 ,  1
+# im, m, iorb :  1 ,  0 ,  3
+# im, m, iorb :  1 ,  0 ,  3
+# im, m, iorb :  1 ,  0 ,  3
+# im, m, iorb :  1 ,  0 ,  3
+# im, m, iorb :  2 ,  1 ,  4
+# im, m, iorb :  2 ,  1 ,  4
+# im, m, iorb :  2 ,  1 ,  4
+# im, m, iorb :  2 ,  1 ,  4
